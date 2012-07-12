@@ -195,7 +195,7 @@ static inline void usbi_dbg(const char *format, ...)
 /* Internal abstractions for thread synchronization and poll */
 #if defined(THREADS_POSIX)
 #include "os/threads_posix.h"
-#elif defined(OS_WINDOWS)
+#elif defined(OS_WINDOWS) || defined(OS_WINCE)
 #include <os/threads_windows.h>
 #endif
 
@@ -204,9 +204,11 @@ static inline void usbi_dbg(const char *format, ...)
 #include "os/poll_posix.h"
 #elif defined(OS_WINDOWS)
 #include <os/poll_windows.h>
+#elif defined(OS_WINCE)
+#include <os/poll_wince.h>
 #endif
 
-#if defined(OS_WINDOWS) && !defined(__GCC__)
+#if (defined(OS_WINDOWS) || defined(OS_WINCE)) && !defined(__GCC__)
 #undef HAVE_GETTIMEOFDAY
 int usbi_gettimeofday(struct timeval *tp, void *tzp);
 #define LIBUSB_GETTIMEOFDAY_WIN32
@@ -906,5 +908,6 @@ extern const struct usbi_os_backend linux_usbfs_backend;
 extern const struct usbi_os_backend darwin_backend;
 extern const struct usbi_os_backend openbsd_backend;
 extern const struct usbi_os_backend windows_backend;
+extern const struct usbi_os_backend wince_backend;
 
 #endif

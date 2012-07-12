@@ -62,10 +62,14 @@ typedef unsigned __int32  uint32_t;
  * libusb_config_descriptor has an 'interface' member
  * As this can be problematic if you include windows.h after libusb.h
  * in your sources, we force windows.h to be included first. */
-#if defined(_WIN32) || defined(__CYGWIN__)
+#if defined(_WIN32) || defined(__CYGWIN__) || defined(_WIN32_WCE)
 #include <windows.h>
 #if defined(interface)
 #undef interface
+#endif
+#if defined(_WIN32_WCE)
+// Needed for "struct timeval" definition
+#include <winsock2.h>
 #endif
 #endif
 
@@ -101,7 +105,7 @@ typedef unsigned __int32  uint32_t;
  * return type, before the function name. See internal documentation for
  * API_EXPORTED.
  */
-#if defined(_WIN32) || defined(__CYGWIN__)
+#if defined(_WIN32) || defined(__CYGWIN__) || defined(_WIN32_WCE)
 #define LIBUSB_CALL WINAPI
 #else
 #define LIBUSB_CALL
