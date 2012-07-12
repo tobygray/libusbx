@@ -70,7 +70,11 @@ int usbi_mutex_unlock(usbi_mutex_t *mutex) {
 int usbi_mutex_static_lock(usbi_mutex_static_t *mutex) {
 	if(!mutex)               return ((errno=EINVAL));
 	while (InterlockedExchange((LONG *)mutex, 1) == 1) {
+#ifdef _WIN32_WCE
+		Sleep(0);
+#else
 		SleepEx(0, TRUE);
+#endif
 	}
 	return 0;
 }
@@ -184,7 +188,13 @@ int usbi_cond_timedwait(usbi_cond_t *cond,
 	DWORD millis;
 	extern const uint64_t epoch_time;
 
+#ifdef _WIN32_WCE
+	SYSTEMTIME st;
+	GetSystemTime(&st);
+	SystemTimeToFileTime(&st, &filetime);
+#else
 	GetSystemTimeAsFileTime(&filetime);
+#endif
 	rtime.LowPart   = filetime.dwLowDateTime;
 	rtime.HighPart  = filetime.dwHighDateTime;
 	rtime.QuadPart -= epoch_time;

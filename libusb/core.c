@@ -1788,7 +1788,13 @@ int usbi_gettimeofday(struct timeval *tp, void *tzp)
 	UNUSED(tzp);
 
 	if(tp) {
+#if defined(OS_WINCE)
+		SYSTEMTIME st;
+		GetSystemTime(&st);
+		SystemTimeToFileTime(&st, &_now.ft);
+#else
 		GetSystemTimeAsFileTime (&_now.ft);
+#endif
 		tp->tv_usec=(long)((_now.ns100 / 10) % 1000000 );
 		tp->tv_sec= (long)((_now.ns100 - _W32_FT_OFFSET) / 10000000);
 	}
