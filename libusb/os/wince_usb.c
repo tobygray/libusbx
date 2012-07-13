@@ -786,7 +786,7 @@ static int wince_cancel_transfer(
 	return LIBUSB_SUCCESS;
 }
 
-static int wince_submit_control_transfer(struct usbi_transfer *itransfer)
+static int wince_submit_control_or_bulk_transfer(struct usbi_transfer *itransfer)
 {
 	struct libusb_transfer *transfer = USBI_TRANSFER_TO_LIBUSB_TRANSFER(itransfer);
 	struct libusb_context *ctx = DEVICE_CTX(transfer->dev_handle->dev);
@@ -796,14 +796,16 @@ static int wince_submit_control_transfer(struct usbi_transfer *itransfer)
 	struct winfd wfd;
 	DWORD flags;
 	HANDLE eventHandle;
-	
-	// Split out control setup header and data buffer
-	PUKW_CONTROL_HEADER setup = (PUKW_CONTROL_HEADER) transfer->buffer;
-	DWORD bufLen = transfer->length - sizeof(UKW_CONTROL_HEADER);
-	PVOID buf = (PVOID) &transfer->buffer[sizeof(UKW_CONTROL_HEADER)];
+	PUKW_CONTROL_HEADER setup = NULL;
+	const BOOL control_transfer = transfer->type == LIBUSB_TRANSFER_TYPE_CONTROL;
 
 	transfer_priv->pollable_fd = INVALID_WINFD;
-	direction_in = setup->bmRequestType & LIBUSB_ENDPOINT_IN;
+	if (control_transfer) {
+		setup = (PUKW_CONTROL_HEADER) transfer->buffer;
+		direction_in = setup->bmRequestType & LIBUSB_ENDPOINT_IN;
+	} else {
+		direction_in = transfer->endpoint & LIBUSB_ENDPOINT_IN;
+	}
 	flags = direction_in ? UKW_TF_IN_TRANSFER : UKW_TF_OUT_TRANSFER;
 	flags |= UKW_TF_SHORT_TRANSFER_OK;
 
@@ -820,53 +822,20 @@ static int wince_submit_control_transfer(struct usbi_transfer *itransfer)
 	}
 
 	transfer_priv->pollable_fd = wfd;
-	ret = UkwIssueControlTransfer(priv->dev, flags, setup, buf, bufLen, &transfer->actual_length, wfd.overlapped);
+	if (control_transfer) {
+		// Split out control setup header and data buffer
+		DWORD bufLen = transfer->length - sizeof(UKW_CONTROL_HEADER);
+		PVOID buf = (PVOID) &transfer->buffer[sizeof(UKW_CONTROL_HEADER)];
+
+		ret = UkwIssueControlTransfer(priv->dev, flags, setup, buf, bufLen, &transfer->actual_length, wfd.overlapped);
+	} else {
+		ret = UkwIssueBulkTransfer(priv->dev, flags, transfer->endpoint, transfer->buffer, 
+			transfer->length, &transfer->actual_length, wfd.overlapped);
+	}
 	if (!ret) {
 		int libusbErr = translate_driver_error(GetLastError());
-		usbi_err(ctx, "UkwIssueControlTransfer failed: error %d", GetLastError());
-		wince_clear_transfer_priv(itransfer);
-		return libusbErr;
-	}
-	usbi_add_pollfd(ctx, transfer_priv->pollable_fd.fd, direction_in ? POLLIN : POLLOUT);
-	itransfer->flags |= USBI_TRANSFER_UPDATED_FDS;
-
-	return LIBUSB_SUCCESS;
-}
-
-static int wince_submit_bulk_transfer(struct usbi_transfer *itransfer)
-{
-	struct libusb_transfer *transfer = USBI_TRANSFER_TO_LIBUSB_TRANSFER(itransfer);
-	struct libusb_context *ctx = DEVICE_CTX(transfer->dev_handle->dev);
-	struct wince_transfer_priv *transfer_priv = (struct wince_transfer_priv*)usbi_transfer_get_os_priv(itransfer);
-	struct wince_device_priv *priv = _device_priv(transfer->dev_handle->dev);
-	BOOL direction_in, ret;
-	struct winfd wfd;
-	DWORD flags;
-	HANDLE eventHandle;
-		
-	transfer_priv->pollable_fd = INVALID_WINFD;
-	direction_in = transfer->endpoint & LIBUSB_ENDPOINT_IN;
-	flags = direction_in ? UKW_TF_IN_TRANSFER : UKW_TF_OUT_TRANSFER;
-	flags |= UKW_TF_SHORT_TRANSFER_OK;
-
-	eventHandle = CreateEvent(NULL, FALSE, FALSE, NULL);
-	if (eventHandle == NULL) {
-		usbi_err(ctx, "Failed to create event for async transfer");
-		return LIBUSB_ERROR_NO_MEM;
-	}
-
-	wfd = usbi_create_fd(eventHandle, direction_in ? RW_READ : RW_WRITE, itransfer, &wince_cancel_transfer);
-	if (wfd.fd < 0) {
-		CloseHandle(eventHandle);
-		return LIBUSB_ERROR_NO_MEM;
-	}
-
-	transfer_priv->pollable_fd = wfd;
-	ret = UkwIssueBulkTransfer(priv->dev, flags, transfer->endpoint, transfer->buffer, 
-		transfer->length, &transfer->actual_length, wfd.overlapped);
-	if (!ret) {
-		int libusbErr = translate_driver_error(GetLastError());
-		usbi_err(ctx, "UkwIssueBulkTransfer failed: error %d", GetLastError());
+		usbi_err(ctx, "UkwIssue%sTransfer failed: error %d",
+			control_transfer ? "Control" : "Bulk", GetLastError());
 		wince_clear_transfer_priv(itransfer);
 		return libusbErr;
 	}
@@ -888,10 +857,9 @@ static int wince_submit_transfer(
 
 	switch (transfer->type) {
 	case LIBUSB_TRANSFER_TYPE_CONTROL:
-		return wince_submit_control_transfer(itransfer);
 	case LIBUSB_TRANSFER_TYPE_BULK:
 	case LIBUSB_TRANSFER_TYPE_INTERRUPT:
-		return wince_submit_bulk_transfer(itransfer);
+		return wince_submit_control_or_bulk_transfer(itransfer);
 	case LIBUSB_TRANSFER_TYPE_ISOCHRONOUS:
 		return wince_submit_iso_transfer(itransfer);
 	default:
