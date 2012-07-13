@@ -1266,9 +1266,6 @@ const struct usbi_os_backend wince_backend = {
         wince_handle_events,
 
         wince_clock_gettime,
-#if defined(USBI_TIMERFD_AVAILABLE)
-        NULL,
-#endif
         sizeof(struct wince_device_priv),
         sizeof(struct wince_device_handle_priv),
         sizeof(struct wince_transfer_priv),
