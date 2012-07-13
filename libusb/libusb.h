@@ -49,7 +49,9 @@ typedef unsigned __int32  uint32_t;
 #include <stdint.h>
 #endif
 
+#ifndef WINCE
 #include <sys/types.h>
+#endif
 #include <time.h>
 #include <limits.h>
 

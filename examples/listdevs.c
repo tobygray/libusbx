@@ -18,7 +18,9 @@
  */
 
 #include <stdio.h>
+#ifndef WINCE
 #include <sys/types.h>
+#endif
 
 #include "libusb.h"
 

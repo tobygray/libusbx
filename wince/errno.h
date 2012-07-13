@@ -1,4 +1,8 @@
-/* Dummy file to support lack of errno.h on WinCE. */
+/* File to support lack of errno.h on WinCE.
+ *
+ * The values used here match up with typical values on Linux
+ * systems.
+ */
 
 #define EPERM   1
 #define EINTR   4

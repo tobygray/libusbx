@@ -59,7 +59,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -72,6 +72,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -135,7 +136,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -147,6 +148,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -210,7 +212,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -222,6 +224,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -285,7 +288,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -297,6 +300,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -360,7 +364,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -372,6 +376,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -435,7 +440,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -447,6 +452,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -510,7 +516,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -522,6 +528,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -585,7 +592,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -597,6 +604,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -662,7 +670,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -674,6 +682,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -739,7 +748,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -751,6 +760,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -816,7 +826,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -828,6 +838,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -893,7 +904,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -905,6 +916,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -970,7 +982,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -982,6 +994,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -1047,7 +1060,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb"
+				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -1059,6 +1072,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WINCE"
 				AdditionalIncludeDirectories=".."
 			/>
 			<Tool
@@ -1187,30 +1201,6 @@
 					RelativePath="..\errno.h"
 					>
 				</File>
-				<File
-					RelativePath="..\inttypes.h"
-					>
-				</File>
-				<File
-					RelativePath="..\signal.h"
-					>
-				</File>
-				<File
-					RelativePath="..\stdint.h"
-					>
-				</File>
-				<File
-					RelativePath="..\winresrc.h"
-					>
-				</File>
-				<Filter
-					Name="sys"
-					>
-					<File
-						RelativePath="..\sys\types.h"
-						>
-					</File>
-				</Filter>
 			</Filter>
 		</Filter>
 		<Filter

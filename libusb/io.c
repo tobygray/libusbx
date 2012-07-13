@@ -20,7 +20,9 @@
 
 #include <config.h>
 #include <errno.h>
+#ifndef WINCE
 #include <signal.h>
+#endif
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
