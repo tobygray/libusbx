@@ -1,8 +1,7 @@
 /* config.h.  Manual config for WinCE.  */
 
 #ifndef _MSC_VER
-#warn "wince/config.h shouldn't be included for your development environment."
-#error "Please make sure the msvc/ directory is removed from your build path."
+#error "Building the WinCE backend outside of MSVC is currently not supported."
 #endif
 
 /* Default visibility */
