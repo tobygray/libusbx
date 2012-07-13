@@ -221,11 +221,7 @@ int usbi_gettimeofday(struct timeval *tp, void *tzp);
 #endif
 
 #if (defined(OS_WINCE))
-/* Windows CE doesn't have any APIs to query environment variables.
- *
- * wince_usb.c contains a registry based implementation of getenv.
- */
-char *getenv(const char *name);
+#include "missing.h"
 #endif
 
 extern struct libusb_context *usbi_default_context;

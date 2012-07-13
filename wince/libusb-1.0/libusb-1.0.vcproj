@@ -1141,6 +1141,14 @@
 				>
 			</File>
 			<Filter
+				Name="wince"
+				>
+				<File
+					RelativePath="..\missing.c"
+					>
+				</File>
+			</Filter>
+			<Filter
 				Name="os"
 				>
 				<File
@@ -1199,6 +1207,10 @@
 				</File>
 				<File
 					RelativePath="..\errno.h"
+					>
+				</File>
+				<File
+					RelativePath="..\missing.h"
 					>
 				</File>
 			</Filter>
