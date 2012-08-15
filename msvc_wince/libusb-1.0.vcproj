@@ -59,7 +59,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -73,14 +73,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -136,7 +136,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -149,14 +149,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -212,7 +212,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -225,14 +225,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -288,7 +288,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -301,14 +301,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -364,7 +364,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -377,14 +377,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -440,7 +440,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -453,14 +453,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -516,7 +516,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="3"
@@ -529,14 +529,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				TargetMachine="0"
@@ -592,7 +592,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -605,14 +605,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -670,7 +670,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -683,14 +683,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -748,7 +748,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -761,14 +761,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -826,7 +826,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -839,14 +839,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -904,7 +904,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -917,14 +917,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -982,7 +982,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -995,14 +995,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -1060,7 +1060,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
-				AdditionalIncludeDirectories="..;..\..\libusb;..\..\msvc"
+				AdditionalIncludeDirectories=".;..\libusb;..\msvc"
 				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;_USRDLL;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"
@@ -1073,14 +1073,14 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="WINCE"
-				AdditionalIncludeDirectories=".."
+				AdditionalIncludeDirectories="."
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				ModuleDefinitionFile="../../libusb/libusb-1.0.def"
+				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
 				OptimizeReferences="2"
@@ -1121,30 +1121,30 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\libusb\core.c"
+				RelativePath="..\libusb\core.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\descriptor.c"
+				RelativePath="..\libusb\descriptor.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\io.c"
+				RelativePath="..\libusb\io.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\libusb-1.0.def"
+				RelativePath="..\libusb\libusb-1.0.def"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\sync.c"
+				RelativePath="..\libusb\sync.c"
 				>
 			</File>
 			<Filter
 				Name="wince"
 				>
 				<File
-					RelativePath="..\missing.c"
+					RelativePath="missing.c"
 					>
 				</File>
 			</Filter>
@@ -1152,15 +1152,15 @@
 				Name="os"
 				>
 				<File
-					RelativePath="..\..\libusb\os\poll_wince.c"
+					RelativePath="..\libusb\os\poll_wince.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\libusb\os\threads_windows.c"
+					RelativePath="..\libusb\os\threads_windows.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\libusb\os\wince_usb.c"
+					RelativePath="..\libusb\os\wince_usb.c"
 					>
 				</File>
 			</Filter>
@@ -1171,30 +1171,30 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\libusb\libusb.h"
+				RelativePath="..\libusb\libusb.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\libusbi.h"
+				RelativePath="..\libusb\libusbi.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\libusb\version.h"
+				RelativePath="..\libusb\version.h"
 				>
 			</File>
 			<Filter
 				Name="os"
 				>
 				<File
-					RelativePath="..\..\libusb\os\poll_wince.h"
+					RelativePath="..\libusb\os\poll_wince.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\libusb\os\threads_windows.h"
+					RelativePath="..\libusb\os\threads_windows.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\libusb\os\wince_usb.h"
+					RelativePath="..\libusb\os\wince_usb.h"
 					>
 				</File>
 			</Filter>
@@ -1202,15 +1202,15 @@
 				Name="wince"
 				>
 				<File
-					RelativePath="..\config.h"
+					RelativePath="config.h"
 					>
 				</File>
 				<File
-					RelativePath="..\errno.h"
+					RelativePath="errno.h"
 					>
 				</File>
 				<File
-					RelativePath="..\missing.h"
+					RelativePath="missing.h"
 					>
 				</File>
 			</Filter>
@@ -1221,7 +1221,7 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath="..\..\libusb\libusb-1.0.rc"
+				RelativePath="..\libusb\libusb-1.0.rc"
 				>
 			</File>
 		</Filter>

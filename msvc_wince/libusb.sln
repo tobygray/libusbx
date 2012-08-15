@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0", "libusb-1.0\libusb-1.0.vcproj", "{6A49B75F-FB1C-45C0-B7C3-A7698255E7E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0", "libusb-1.0.vcproj", "{6A49B75F-FB1C-45C0-B7C3-A7698255E7E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "listdevs", "listdevs\listdevs.vcproj", "{960C3BC3-26D6-49C7-ACE4-0AE65CC049E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "listdevs", "listdevs.vcproj", "{960C3BC3-26D6-49C7-ACE4-0AE65CC049E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
