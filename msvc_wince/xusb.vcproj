@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="listdevs"
-	ProjectGUID="{960C3BC3-26D6-49C7-ACE4-0AE65CC049E6}"
-	RootNamespace="listdevs"
+	Name="xusb"
+	ProjectGUID="{93F53A7E-6DEF-469A-ABD4-A5AD02A0A511}"
+	RootNamespace="xusb"
 	>
 	<Platforms>
 		<Platform
@@ -99,7 +99,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="%CSIDL_PROGRAM_FILES%\listdevs"
+				RemoteDirectory="%CSIDL_PROGRAM_FILES%\xusb"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>
@@ -1096,7 +1096,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\examples\listdevs.c"
+				RelativePath="..\examples\xusb.c"
 				>
 			</File>
 		</Filter>
