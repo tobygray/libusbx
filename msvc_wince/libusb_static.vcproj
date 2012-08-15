@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="libusb-1.0"
-	ProjectGUID="{6A49B75F-FB1C-45C0-B7C3-A7698255E7E9}"
-	RootNamespace="libusb-1.0"
+	Name="libusb-1.0 (static)"
+	ProjectGUID="{CE67BEFB-37EA-4F5C-A60E-F2D0CC91B6AA}"
+	RootNamespace="libusb"
 	>
 	<Platforms>
 		<Platform
@@ -36,7 +36,7 @@
 			Name="Debug|STANDARDSDK_500 (ARMV4I)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -79,11 +79,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -113,7 +110,7 @@
 			Name="Debug|STANDARDSDK_500 (MIPSII)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -155,11 +152,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -189,7 +183,7 @@
 			Name="Debug|STANDARDSDK_500 (MIPSII_FP)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -231,11 +225,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -265,7 +256,7 @@
 			Name="Debug|STANDARDSDK_500 (MIPSIV)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -307,11 +298,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -341,7 +329,7 @@
 			Name="Debug|STANDARDSDK_500 (MIPSIV_FP)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -383,11 +371,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -417,7 +402,7 @@
 			Name="Debug|STANDARDSDK_500 (SH4)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -459,11 +444,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -493,7 +475,7 @@
 			Name="Debug|STANDARDSDK_500 (x86)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			>
 			<Tool
@@ -535,11 +517,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -569,7 +548,7 @@
 			Name="Release|STANDARDSDK_500 (ARMV4I)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -611,13 +590,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -647,7 +621,7 @@
 			Name="Release|STANDARDSDK_500 (MIPSII)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -689,13 +663,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -725,7 +694,7 @@
 			Name="Release|STANDARDSDK_500 (MIPSII_FP)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -767,13 +736,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -803,7 +767,7 @@
 			Name="Release|STANDARDSDK_500 (MIPSIV)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -845,13 +809,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -881,7 +840,7 @@
 			Name="Release|STANDARDSDK_500 (MIPSIV_FP)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -923,13 +882,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -959,7 +913,7 @@
 			Name="Release|STANDARDSDK_500 (SH4)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -1001,13 +955,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1037,7 +986,7 @@
 			Name="Release|STANDARDSDK_500 (x86)"
 			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
 			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -1079,13 +1028,8 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				ModuleDefinitionFile="../libusb/libusb-1.0.def"
-				GenerateDebugInformation="true"
-				SubSystem="9"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
+				AdditionalOptions="/subsystem:$(CESubsystem)"
 			/>
 			<Tool
 				Name="VCALinkTool"
