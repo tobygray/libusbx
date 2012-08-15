@@ -34,8 +34,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (ARMV4I)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -108,8 +108,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSII)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -182,8 +182,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSII_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -256,8 +256,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSIV)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -330,8 +330,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSIV_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -404,8 +404,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (SH4)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -478,8 +478,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (x86)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			>
@@ -552,8 +552,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (ARMV4I)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -628,8 +628,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSII)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -704,8 +704,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSII_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -780,8 +780,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSIV)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -856,8 +856,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSIV_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -932,8 +932,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (SH4)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -1008,8 +1008,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (x86)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\examples"
+			IntermediateDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\examples\$(TargetName)"
 			ConfigurationType="1"
 			CharacterSet="2"
 			WholeProgramOptimization="1"

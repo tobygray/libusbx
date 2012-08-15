@@ -34,8 +34,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (ARMV4I)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -80,6 +80,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -111,8 +112,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSII)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -156,6 +157,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -187,8 +189,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSII_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -232,6 +234,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -263,8 +266,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSIV)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -308,6 +311,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -339,8 +343,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (MIPSIV_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -384,6 +388,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -415,8 +420,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (SH4)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -460,6 +465,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -491,8 +497,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|STANDARDSDK_500 (x86)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -536,6 +542,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -567,8 +574,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (ARMV4I)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (ARMV4I)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\ARMV4I\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -612,6 +619,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -645,8 +653,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSII)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -690,6 +698,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -723,8 +732,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSII_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSII_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSII_FP\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -768,6 +777,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -801,8 +811,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSIV)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -846,6 +856,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -879,8 +890,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (MIPSIV_FP)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (MIPSIV_FP)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\MIPSIV_FP\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -924,6 +935,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -957,8 +969,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (SH4)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (SH4)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (SH4)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\SH4\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -1002,6 +1014,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
@@ -1035,8 +1048,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|STANDARDSDK_500 (x86)"
-			OutputDirectory="$(SolutionDir)STANDARDSDK_500 (x86)\$(ConfigurationName)"
-			IntermediateDirectory="STANDARDSDK_500 (x86)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\dll"
+			IntermediateDirectory="$(SolutionDir)..\x86\$(ConfigurationName)\dll\libusb-1.0"
 			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -1080,6 +1093,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\libusb-1.0.dll"
 				ModuleDefinitionFile="../libusb/libusb-1.0.def"
 				GenerateDebugInformation="true"
 				SubSystem="9"
