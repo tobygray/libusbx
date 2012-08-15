@@ -1133,43 +1133,39 @@
 				>
 			</File>
 			<File
-				RelativePath="..\libusb\libusb-1.0.def"
+				RelativePath="missing.c"
+				>
+			</File>
+			<File
+				RelativePath="..\libusb\os\poll_wince.c"
 				>
 			</File>
 			<File
 				RelativePath="..\libusb\sync.c"
 				>
 			</File>
-			<Filter
-				Name="wince"
+			<File
+				RelativePath="..\libusb\os\threads_windows.c"
 				>
-				<File
-					RelativePath="missing.c"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="os"
+			</File>
+			<File
+				RelativePath="..\libusb\os\wince_usb.c"
 				>
-				<File
-					RelativePath="..\libusb\os\poll_wince.c"
-					>
-				</File>
-				<File
-					RelativePath="..\libusb\os\threads_windows.c"
-					>
-				</File>
-				<File
-					RelativePath="..\libusb\os\wince_usb.c"
-					>
-				</File>
-			</Filter>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath="config.h"
+				>
+			</File>
+			<File
+				RelativePath="errno.h"
+				>
+			</File>
 			<File
 				RelativePath="..\libusb\libusb.h"
 				>
@@ -1179,47 +1175,35 @@
 				>
 			</File>
 			<File
+				RelativePath="missing.h"
+				>
+			</File>
+			<File
+				RelativePath="..\libusb\os\poll_wince.h"
+				>
+			</File>
+			<File
+				RelativePath="..\libusb\os\threads_windows.h"
+				>
+			</File>
+			<File
 				RelativePath="..\libusb\version.h"
 				>
 			</File>
-			<Filter
-				Name="os"
+			<File
+				RelativePath="..\libusb\os\wince_usb.h"
 				>
-				<File
-					RelativePath="..\libusb\os\poll_wince.h"
-					>
-				</File>
-				<File
-					RelativePath="..\libusb\os\threads_windows.h"
-					>
-				</File>
-				<File
-					RelativePath="..\libusb\os\wince_usb.h"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="wince"
-				>
-				<File
-					RelativePath="config.h"
-					>
-				</File>
-				<File
-					RelativePath="errno.h"
-					>
-				</File>
-				<File
-					RelativePath="missing.h"
-					>
-				</File>
-			</Filter>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath="..\libusb\libusb-1.0.def"
+				>
+			</File>
 			<File
 				RelativePath="..\libusb\libusb-1.0.rc"
 				>
