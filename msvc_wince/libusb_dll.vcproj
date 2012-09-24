@@ -1208,6 +1208,10 @@
 				RelativePath="..\libusb\os\wince_usb.h"
 				>
 			</File>
+			<File
+				RelativePath="..\libusb\os\windows_common.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

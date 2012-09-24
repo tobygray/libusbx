@@ -23,49 +23,12 @@
  */
 #pragma once
 
+#include "windows_common.h"
+
 #include <windows.h>
 #include "poll_windows.h"
 
-#define safe_free(p) do {if (p != NULL) {free((void*)p); p = NULL;}} while(0)
-#define safe_strcmp(str1, str2) strcmp(((str1==NULL)?"<NULL>":str1), ((str2==NULL)?"<NULL>":str2))
-#define safe_tcslen(str) ((str==NULL)?0:_tcslen(str))
-#define safe_strlen(str) ((str==NULL)?0:strlen(str))
-#define safe_sprintf _sntprintf
-
 #define MAX_DEVICE_COUNT            256
-#define TIMER_REQUEST_RETRY_MS      100
-#define MAX_TIMER_SEMAPHORES        128
-#define ERR_BUFFER_SIZE             256
-#define HTAB_SIZE                   1021
-
-/*
- * API macros - from libusb-win32 1.x
- */
-#define DLL_DECLARE_PREFIXED(api, ret, prefix, name, args)    \
-	typedef ret (api * __dll_##name##_t)args;                 \
-	static __dll_##name##_t prefix##name = NULL
-
-#define DLL_LOAD_PREFIXED(dll, prefix, name, ret_on_failure)  \
-	do {                                                      \
-		HMODULE h = GetModuleHandle(L#dll);                   \
-	if (!h)                                                   \
-		h = LoadLibrary(L#dll);                               \
-	if (!h) {                                                 \
-		if (ret_on_failure) { return LIBUSB_ERROR_NOT_FOUND; }\
-		else { break; }                                       \
-	}                                                         \
-	prefix##name = (__dll_##name##_t)GetProcAddress(h, L#name);\
-	if (prefix##name) break;                                  \
-	prefix##name = (__dll_##name##_t)GetProcAddress(h, L#name L"A");\
-	if (prefix##name) break;                                  \
-	prefix##name = (__dll_##name##_t)GetProcAddress(h, L#name L"W");\
-	if (prefix##name) break;                                  \
-	if(ret_on_failure)                                        \
-		return LIBUSB_ERROR_NOT_FOUND;                        \
-	} while(0)
-
-#define DLL_DECLARE(api, ret, name, args)   DLL_DECLARE_PREFIXED(api, ret, , name, args)
-#define DLL_LOAD(dll, name, ret_on_failure) DLL_LOAD_PREFIXED(dll, , name, ret_on_failure)
 
 // This is a modified dump of the types in the ceusbkwrapper.h library header
 // with functions transformed into extern pointers.

@@ -66,7 +66,7 @@ static char* windows_error_str(uint32_t retval)
 
 	error_code = retval?retval:GetLastError();
 	
-	safe_sprintf(wErr_string, ERR_BUFFER_SIZE, _T("[%d] "), error_code);
+	safe_stprintf(wErr_string, ERR_BUFFER_SIZE, _T("[%d] "), error_code);
 	
 	size = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, error_code,
 		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), &wErr_string[safe_tcslen(wErr_string)],
@@ -74,10 +74,10 @@ static char* windows_error_str(uint32_t retval)
 	if (size == 0) {
 		format_error = GetLastError();
 		if (format_error)
-			safe_sprintf(wErr_string, ERR_BUFFER_SIZE,
+			safe_stprintf(wErr_string, ERR_BUFFER_SIZE,
 				_T("Windows error code %u (FormatMessage error code %u)"), error_code, format_error);
 		else
-			safe_sprintf(wErr_string, ERR_BUFFER_SIZE, _T("Unknown error code %u"), error_code);
+			safe_stprintf(wErr_string, ERR_BUFFER_SIZE, _T("Unknown error code %u"), error_code);
 	} else {
 		// Remove CR/LF terminators
 		for (i=safe_tcslen(wErr_string)-1; ((wErr_string[i]==0x0A) || (wErr_string[i]==0x0D)); i--) {
