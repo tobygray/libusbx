@@ -151,7 +151,7 @@ void init_polling(void)
 	int i;
 
 	while (InterlockedExchange((LONG *)&compat_spinlock, 1) == 1) {
-		SleepEx(0, TRUE);
+		usbi_sleep(0);
 	}
 	if (!is_polling_set) {
 		setup_cancel_io();
@@ -233,7 +233,7 @@ void exit_polling(void)
 	int i;
 
 	while (InterlockedExchange((LONG *)&compat_spinlock, 1) == 1) {
-		SleepEx(0, TRUE);
+		usbi_sleep(0);
 	}
 	if (is_polling_set) {
 		is_polling_set = FALSE;

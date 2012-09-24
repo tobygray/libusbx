@@ -70,11 +70,7 @@ int usbi_mutex_unlock(usbi_mutex_t *mutex) {
 int usbi_mutex_static_lock(usbi_mutex_static_t *mutex) {
 	if(!mutex)               return ((errno=EINVAL));
 	while (InterlockedExchange((LONG *)mutex, 1) == 1) {
-#ifdef _WIN32_WCE
-		Sleep(0);
-#else
-		SleepEx(0, TRUE);
-#endif
+		usbi_sleep(0);
 	}
 	return 0;
 }
@@ -218,4 +214,12 @@ int usbi_cond_timedwait(usbi_cond_t *cond,
 
 int usbi_get_tid(void) {
 	return GetCurrentThreadId();
+}
+
+void usbi_sleep(int milliseconds) {
+#ifdef _WIN32_WCE
+	Sleep(milliseconds);
+#else
+	SleepEx(milliseconds, TRUE);
+#endif
 }
