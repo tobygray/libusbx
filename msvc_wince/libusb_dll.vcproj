@@ -1151,7 +1151,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\libusb\os\poll_wince.c"
+				RelativePath="..\libusb\os\poll_windows.c"
 				>
 			</File>
 			<File
@@ -1193,7 +1193,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\libusb\os\poll_wince.h"
+				RelativePath="..\libusb\os\poll_windows.h"
 				>
 			</File>
 			<File

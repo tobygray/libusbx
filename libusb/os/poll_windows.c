@@ -66,7 +66,7 @@
 #define CHECK_INIT_POLLING do {if(!is_polling_set) init_polling();} while(0)
 
 // public fd data
-const struct winfd INVALID_WINFD = {-1, INVALID_HANDLE_VALUE, NULL, RW_NONE};
+const struct winfd INVALID_WINFD = {-1, INVALID_HANDLE_VALUE, NULL, NULL, NULL, RW_NONE};
 struct winfd poll_fd[MAX_FDS];
 // internal fd data
 struct {
@@ -81,11 +81,21 @@ BOOLEAN is_polling_set = FALSE;
 LONG pipe_number = 0;
 static volatile LONG compat_spinlock = 0;
 
+#ifndef _WIN32_WCE
 // CancelIoEx, available on Vista and later only, provides the ability to cancel
 // a single transfer (OVERLAPPED) when used. As it may not be part of any of the
 // platform headers, we hook into the Kernel32 system DLL directly to seek it.
 static BOOL (__stdcall *pCancelIoEx)(HANDLE, LPOVERLAPPED) = NULL;
-#define CancelIoEx_Available (pCancelIoEx != NULL)
+#define Use_Duplicate_Handles (pCancelIoEx == NULL)
+
+static __inline void setup_cancel_io()
+{
+	pCancelIoEx = (BOOL (__stdcall *)(HANDLE,LPOVERLAPPED))
+		GetProcAddress(GetModuleHandleA("KERNEL32"), "CancelIoEx");
+	usbi_dbg("Will use CancelIo%s for I/O cancellation",
+		Use_Duplicate_Handles?"":"Ex");
+}
+
 static __inline BOOL cancel_io(int _index)
 {
 	if ((_index < 0) || (_index >= MAX_FDS)) {
@@ -96,7 +106,12 @@ static __inline BOOL cancel_io(int _index)
 	  || (poll_fd[_index].handle == 0) || (poll_fd[_index].overlapped == NULL) ) {
 		return TRUE;
 	}
-	if (CancelIoEx_Available) {
+	if (poll_fd[_index].itransfer && poll_fd[_index].cancelTransfer) {
+		// Cancel outstanding transfer via the specific callback
+		(*poll_fd[_index].cancelTransfer)(poll_fd[_index].itransfer);
+		return TRUE;
+	}
+	if (pCancelIoEx != NULL) {
 		return (*pCancelIoEx)(poll_fd[_index].handle, poll_fd[_index].overlapped);
 	}
 	if (_poll_fd[_index].thread_id == GetCurrentThreadId()) {
@@ -105,6 +120,30 @@ static __inline BOOL cancel_io(int _index)
 	usbi_warn(NULL, "Unable to cancel I/O that was started from another thread");
 	return FALSE;
 }
+#else
+#define Use_Duplicate_Handles FALSE
+
+static __inline void setup_cancel_io()
+{
+	// No setup needed on WinCE
+}
+
+static __inline BOOL cancel_io(int _index)
+{
+	if ((_index < 0) || (_index >= MAX_FDS)) {
+		return FALSE;
+	}
+	if ( (poll_fd[_index].fd < 0) || (poll_fd[_index].handle == INVALID_HANDLE_VALUE)
+	  || (poll_fd[_index].handle == 0) || (poll_fd[_index].overlapped == NULL) ) {
+		return TRUE;
+	}
+	if (poll_fd[_index].itransfer && poll_fd[_index].cancelTransfer) {
+		// Cancel outstanding transfer via the specific callback
+		(*poll_fd[_index].cancelTransfer)(poll_fd[_index].itransfer);
+	}
+	return TRUE;
+}
+#endif
 
 // Init
 void init_polling(void)
@@ -115,10 +154,7 @@ void init_polling(void)
 		SleepEx(0, TRUE);
 	}
 	if (!is_polling_set) {
-		pCancelIoEx = (BOOL (__stdcall *)(HANDLE,LPOVERLAPPED))
-			GetProcAddress(GetModuleHandleA("KERNEL32"), "CancelIoEx");
-		usbi_dbg("Will use CancelIo%s for I/O cancellation",
-			CancelIoEx_Available?"Ex":"");
+		setup_cancel_io();
 		for (i=0; i<MAX_FDS; i++) {
 			poll_fd[i] = INVALID_WINFD;
 			_poll_fd[i].original_handle = INVALID_HANDLE_VALUE;
@@ -210,7 +246,7 @@ void exit_polling(void)
 			// mutex lock before too long
 			EnterCriticalSection(&_poll_fd[i].mutex);
 			free_overlapped(poll_fd[i].overlapped);
-			if (!CancelIoEx_Available) {
+			if (Use_Duplicate_Handles) {
 				// Close duplicate handle
 				if (_poll_fd[i].original_handle != INVALID_HANDLE_VALUE) {
 					CloseHandle(poll_fd[i].handle);
@@ -289,7 +325,7 @@ int usbi_pipe(int filedes[2])
  * read and one for write. Using a single R/W fd is unsupported and will
  * produce unexpected results
  */
-struct winfd usbi_create_fd(HANDLE handle, int access_mode)
+struct winfd usbi_create_fd(HANDLE handle, int access_mode, struct usbi_transfer* itransfer, CancelTransfer* cancelTransfer)
 {
 	int i;
 	struct winfd wfd = INVALID_WINFD;
@@ -300,6 +336,9 @@ struct winfd usbi_create_fd(HANDLE handle, int access_mode)
 	if ((handle == 0) || (handle == INVALID_HANDLE_VALUE)) {
 		return INVALID_WINFD;
 	}
+
+	wfd.itransfer = itransfer;
+	wfd.cancelTransfer = cancelTransfer;
 
 	if ((access_mode != RW_READ) && (access_mode != RW_WRITE)) {
 		usbi_warn(NULL, "only one of RW_READ or RW_WRITE are supported.\n"
@@ -329,7 +368,7 @@ struct winfd usbi_create_fd(HANDLE handle, int access_mode)
 			wfd.fd = i;
 			// Attempt to emulate some of the CancelIoEx behaviour on platforms
 			// that don't have it
-			if (!CancelIoEx_Available) {
+			if (Use_Duplicate_Handles) {
 				_poll_fd[i].thread_id = GetCurrentThreadId();
 				if (!DuplicateHandle(GetCurrentProcess(), handle, GetCurrentProcess(),
 					&wfd.handle, 0, TRUE, DUPLICATE_SAME_ACCESS)) {
@@ -358,7 +397,7 @@ void _free_index(int _index)
 	// Cancel any async IO (Don't care about the validity of our handles for this)
 	cancel_io(_index);
 	// close the duplicate handle (if we have an actual duplicate)
-	if (!CancelIoEx_Available) {
+	if (Use_Duplicate_Handles) {
 		if (_poll_fd[_index].original_handle != INVALID_HANDLE_VALUE) {
 			CloseHandle(poll_fd[_index].handle);
 		}

@@ -24,7 +24,7 @@
 #pragma once
 
 #include <windows.h>
-#include "poll_wince.h"
+#include "poll_windows.h"
 
 #define safe_free(p) do {if (p != NULL) {free((void*)p); p = NULL;}} while(0)
 #define safe_strcmp(str1, str2) strcmp(((str1==NULL)?"<NULL>":str1), ((str2==NULL)?"<NULL>":str2))
