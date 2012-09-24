@@ -69,6 +69,12 @@
 
 // This is a modified dump of the types in the ceusbkwrapper.h library header
 // with functions transformed into extern pointers.
+//
+// This backend dynamically loads ceusbkwrapper.dll and doesn't include
+// ceusbkwrapper.h directly to simplify the build process. The kernel
+// side wrapper driver is built using the platform image build tools,
+// which makes it difficult to reference directly from the libusbx build
+// system.
 struct UKW_DEVICE_PRIV;
 typedef struct UKW_DEVICE_PRIV *UKW_DEVICE;
 typedef UKW_DEVICE *PUKW_DEVICE, *LPUKW_DEVICE;
