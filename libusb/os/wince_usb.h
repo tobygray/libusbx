@@ -147,7 +147,9 @@ struct wince_device_priv {
 };
 
 struct wince_device_handle_priv {
-	int a;
+	// This member isn't used, but only exists to avoid an empty structure
+	// for private data for the device handle.
+	int reserved;
 };
 
 struct wince_transfer_priv {
