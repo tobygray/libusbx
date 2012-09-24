@@ -141,6 +141,9 @@ DLL_DECLARE(WINAPI, BOOL, UkwDetachKernelDriver, (UKW_DEVICE, DWORD));
 DLL_DECLARE(WINAPI, BOOL, UkwIssueBulkTransfer, (UKW_DEVICE, DWORD, UCHAR, LPVOID, DWORD, LPDWORD, LPOVERLAPPED));
 DLL_DECLARE(WINAPI, BOOL, UkwIsPipeHalted, (UKW_DEVICE, UCHAR, LPBOOL));
 
+// Used to determine if an endpoint status really is halted on a failed transfer.
+#define STATUS_HALT_FLAG 0x1
+
 struct wince_device_priv {
 	UKW_DEVICE dev;
 	UKW_DEVICE_DESCRIPTOR desc;

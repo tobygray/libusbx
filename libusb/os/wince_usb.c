@@ -30,8 +30,6 @@
 #include <errno.h>
 #include <inttypes.h>
 
-#define STATUS_HALT_FLAG 0x1
-
 // Forward declares
 static int wince_clock_gettime(int clk_id, struct timespec *tp);
 unsigned __stdcall wince_clock_gettime_threaded(void* param);
