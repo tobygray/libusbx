@@ -37,3 +37,4 @@ doc/html
 Debug
 Release
 *.user
+test_stress
