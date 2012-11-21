@@ -22,6 +22,26 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#ifdef _WIN32
+#include <io.h>
+#define dup _dup
+#define dup2 _dup2
+#define open _open
+#define close _close
+#define fdopen _fdopen
+#define NULL_PATH "nul"
+#define STDOUT_FILENO 1
+#define STDERR_FILENO 2
+#else
+#include <unistd.h>
+#define NULL_PATH "/dev/null"
+#endif
+#define INVALID_FD -1
 
 /**
  * Converts a test result code into a human readable string.
@@ -44,20 +64,77 @@ static const char* test_result_to_str(libusbx_testlib_result result)
 
 static void print_usage(int argc, char ** argv)
 {
-	printf("Usage: %s [-l] [<test_name> ...]\n",
-		argc > 0 ? argv[0] : "test_*");
-	printf("   -l   List available tests\n");
+  printf("Usage: %s [-l] [-v] [<test_name> ...]\n",
+	 argc > 0 ? argv[0] : "test_*");
+  printf("   -l   List available tests\n");
+  printf("   -v   Don't redirect STDERR/STDOUT during tests\n");
+}
+
+static void cleanup_test_output(libusbx_testlib_ctx * ctx)
+{
+  if (ctx->output_file != NULL) {
+    fclose(ctx->output_file);
+    ctx->output_file = NULL;
+  }
+  if (ctx->output_fd != INVALID_FD) {
+    close(ctx->output_fd);
+    ctx->output_fd = INVALID_FD;
+  }
+  if (ctx->null_fd != INVALID_FD) {
+    close(ctx->null_fd);
+    ctx->null_fd = INVALID_FD;
+  }
+}
+
+/**
+ * Setup test output handles
+ * \return zero on success, non-zero on failure
+ */
+static int setup_test_output(libusbx_testlib_ctx * ctx)
+{
+  /* Keep a copy of STDOUT for test output */
+  ctx->output_fd = dup(STDOUT_FILENO);
+  if (ctx->output_fd < 0) {
+    ctx->output_fd = INVALID_FD;
+    printf("Failed to duplicate output handle: %d\n", errno);
+    return 1;
+  }
+  ctx->output_file = fdopen(ctx->output_fd, "w");
+  if (!ctx->output_file) {
+    cleanup_test_output(ctx);
+    printf("Failed to open FILE for output handle: %d\n", errno);
+    return 1;
+  }
+  /* Stop output to stdout and stderr from being displayed if using non-verbose output */
+  if (!ctx->verbose) {
+    /* Redirect STDOUT_FILENO and STDERR_FILENO to /dev/null or "nul"*/
+    ctx->null_fd = open(NULL_PATH, O_WRONLY);
+    if (ctx->null_fd < 0) {
+      ctx->null_fd = INVALID_FD;
+      cleanup_test_output(ctx);
+      printf("Failed to open null handle: %d\n", errno);
+      return 1;
+    }
+    if ((dup2(ctx->null_fd, STDOUT_FILENO) < 0) ||
+	(dup2(ctx->null_fd, STDERR_FILENO) < 0)) {
+      cleanup_test_output(ctx);
+      return 1;
+    }
+  }
+  return 0;
 }
 
 void libusbx_testlib_logf(libusbx_testlib_ctx * ctx,
                           const char* fmt, ...)
 {
   va_list va;
-  (void)ctx;
+  if (!ctx->output_file)
+    return;
   va_start(va, fmt);
-  vprintf(fmt, va);
+  vfprintf(ctx->output_file, fmt, va);
   va_end(va);
-  printf("\n");
+  fprintf(ctx->output_file, "\n");
+  fflush(ctx->output_file);
 }
 
 int libusbx_testlib_run_tests(int argc,
@@ -70,7 +147,7 @@ int libusbx_testlib_run_tests(int argc,
   int fail_count = 0;
   int error_count = 0;
   int skip_count = 0;
-  int j;
+  int r, j;
   size_t arglen;
   libusbx_testlib_result test_result;
   libusbx_testlib_ctx ctx;
@@ -79,6 +156,10 @@ int libusbx_testlib_run_tests(int argc,
   ctx.test_names = NULL;
   ctx.test_count = 0;
   ctx.list_tests = false;
+  ctx.verbose = false;
+  ctx.output_fd = INVALID_FD;
+  ctx.output_file = NULL;
+  ctx.null_fd = INVALID_FD;
 
   /* Parse command line options */
   if (argc >= 2) {
@@ -89,6 +170,9 @@ int libusbx_testlib_run_tests(int argc,
 	switch (argv[j][1]) {
 	case 'l':
 	  ctx.list_tests = true;
+	  break;
+	case 'v':
+	  ctx.verbose = true;
 	  break;
 	default:
 	  printf("Unknown option: '%s'\n", argv[j]);
@@ -104,17 +188,25 @@ int libusbx_testlib_run_tests(int argc,
     }
   }
 
+  /* Validate command line options */
+  if (ctx.test_names && ctx.list_tests) {
+    printf("List of tests requested but test list provided\n");
+    print_usage(argc, argv);
+    return 1;
+  }
+
+  /* Setup test log output */
+  r = setup_test_output(&ctx);
+  if (r != 0)
+    return r;  
+
   /* Act on any options not related to running tests */
   if (ctx.list_tests) {
-    if (ctx.test_names) {
-      printf("List of tests requested but test list provided\n");
-      print_usage(argc, argv);
-      return 1;
-    }
     while (tests[idx].function != NULL) {
       libusbx_testlib_logf(&ctx, tests[idx].name);
       ++idx;
     }
+    cleanup_test_output(&ctx);
     return 0;
   }
 
@@ -155,5 +247,7 @@ int libusbx_testlib_run_tests(int argc,
   libusbx_testlib_logf(&ctx, "Failed %d tests", fail_count);
   libusbx_testlib_logf(&ctx, "Error in %d tests", error_count);
   libusbx_testlib_logf(&ctx, "Skipped %d tests", skip_count);
+
+  cleanup_test_output(&ctx);
   return pass_count != run_count;
 }
