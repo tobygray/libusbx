@@ -18,8 +18,10 @@
  */
 
 #include <stdio.h>
-#include <sys/types.h>
 #include <memory.h>
+#ifndef WINCE
+#include <sys/types.h>
+#endif
 
 #include "libusb.h"
 
