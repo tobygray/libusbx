@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0 (dll)", "libusb_dll.vcproj", "{6A49B75F-FB1C-45C0-B7C3-A7698255E7E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0 (dll)", "libusb_dll_wince.vcproj", "{6A49B75F-FB1C-45C0-B7C3-A7698255E7E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "listdevs", "listdevs.vcproj", "{960C3BC3-26D6-49C7-ACE4-0AE65CC049E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "listdevs", "listdevs_wince.vcproj", "{960C3BC3-26D6-49C7-ACE4-0AE65CC049E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xusb", "xusb.vcproj", "{93F53A7E-6DEF-469A-ABD4-A5AD02A0A511}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xusb", "xusb_wince.vcproj", "{93F53A7E-6DEF-469A-ABD4-A5AD02A0A511}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0 (static)", "libusb_static.vcproj", "{CE67BEFB-37EA-4F5C-A60E-F2D0CC91B6AA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libusb-1.0 (static)", "libusb_static_wince.vcproj", "{CE67BEFB-37EA-4F5C-A60E-F2D0CC91B6AA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stress", "stress.vcproj", "{61476624-3354-48C8-9334-85AC0D624640}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stress", "stress_wince.vcproj", "{61476624-3354-48C8-9334-85AC0D624640}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

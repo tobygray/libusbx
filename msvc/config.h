@@ -23,8 +23,12 @@
 /* Message logging */
 #define ENABLE_LOGGING 1
 
-/* Windows backend */
+/* Windows/WinCE backend */
+#if defined(_WIN32_WCE)
+#define OS_WINCE 1
+#else
 #define OS_WINDOWS 1
+#endif
 
 /* type of second poll() argument */
 #define POLL_NFDS_TYPE unsigned int
