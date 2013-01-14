@@ -19,7 +19,7 @@
 
 #include <stdio.h>
 #include <memory.h>
-#ifndef WINCE
+#if !defined(_WIN32_WCE)
 #include <sys/types.h>
 #endif
 

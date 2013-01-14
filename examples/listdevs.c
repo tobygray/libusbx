@@ -18,7 +18,7 @@
  */
 
 #include <stdio.h>
-#ifndef WINCE
+#if !defined(_WIN32_WCE)
 #include <sys/types.h>
 #endif
 

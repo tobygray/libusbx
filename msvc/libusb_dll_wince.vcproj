@@ -72,7 +72,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -149,7 +149,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -226,7 +226,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -303,7 +303,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -380,7 +380,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -457,7 +457,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -534,7 +534,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -611,7 +611,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -690,7 +690,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -769,7 +769,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -848,7 +848,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -927,7 +927,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -1006,7 +1006,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool
@@ -1085,7 +1085,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WINCE"
+				PreprocessorDefinitions="WINCE;_WIN32_WCE"
 				AdditionalIncludeDirectories="."
 			/>
 			<Tool

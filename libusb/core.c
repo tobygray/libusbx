@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef WINCE
+#ifndef _WIN32_WCE
 #include <sys/types.h>
 #endif
 

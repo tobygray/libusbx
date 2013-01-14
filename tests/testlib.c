@@ -23,13 +23,13 @@
 #include <stdarg.h>
 #include <string.h>
 #include <errno.h>
-#ifndef WINCE
+#if !defined(_WIN32_WCE)
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #endif
 
-#if defined(WINCE)
+#if defined(_WIN32_WCE)
 // No support for selective redirection of STDOUT on WinCE.
 #define DISABLE_STDOUT_REDIRECTION
 #define STDOUT_FILENO 1

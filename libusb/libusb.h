@@ -49,7 +49,7 @@ typedef unsigned __int32  uint32_t;
 #include <stdint.h>
 #endif
 
-#ifndef WINCE
+#if !defined(_WIN32_WCE)
 #include <sys/types.h>
 #endif
 #include <time.h>
