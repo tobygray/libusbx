@@ -83,7 +83,7 @@ extern "C" {
  * Definitions of errno. For _doserrno, sys_nerr and * sys_errlist, see
  * stdlib.h.
  */
-#ifdef _UWIN
+#if defined(_UWIN) || defined(_WIN32_WCE)
 #undef errno
 extern int errno;
 #else
