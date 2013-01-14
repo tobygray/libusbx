@@ -25,7 +25,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef _WIN32_WCE
+
+#ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
 #endif
 
