@@ -19,7 +19,6 @@ compile
 config.guess
 config.h*
 !msvc/config.h
-!wince/config.h
 config.log
 config.status
 config.sub
@@ -27,7 +26,6 @@ config.sub
 doxygen.cfg
 listdevs
 xusb
-!wince/listdevs
 dpfp
 dpfp_threaded
 fxload
@@ -42,4 +40,3 @@ Debug
 Release
 *.user
 *.suo
-STANDARDSDK_500 (*)
